@@ -7,6 +7,8 @@ import EventHandling from "./components/EventHandling";
 import Conditional from "./components/Conditional";
 import SimpleState from "./components/SimpleState";
 import SimpleEffect from "./components/SimpleEffect";
+import ComplexEffect from "./components/ComplexEffect";
+import Users from "./components/Users";
 
 
 
@@ -14,10 +16,12 @@ function App () {
   return <div>
     <h1>REACT TUTORIALS</h1>
     
-    <EventHandling />
+    {/* <EventHandling />
     <Conditional />
-    <SimpleState /> 
-    <SimpleEffect />
+    <SimpleState />  */}
+    {/* <SimpleEffect />
+    <ComplexEffect /> */}
+    <Users />
     </div>
 }
 
