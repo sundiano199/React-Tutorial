@@ -9,6 +9,7 @@ import SimpleState from "./components/SimpleState";
 import SimpleEffect from "./components/SimpleEffect";
 import ComplexEffect from "./components/ComplexEffect";
 import Users from "./components/Users";
+import BackToTop from "./components/BackToTop";
 
 
 
@@ -22,6 +23,7 @@ function App () {
     {/* <SimpleEffect />
     <ComplexEffect /> */}
     <Users />
+    <BackToTop />
     </div>
 }
 
