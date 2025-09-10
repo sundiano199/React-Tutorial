@@ -16,7 +16,8 @@ import BackToTop from "./components/BackToTop";
 function App () {
   return <div>
     <h1>REACT TUTORIALS</h1>
-    
+
+    <Navbar />
     {/* <EventHandling />
     <Conditional />
     <SimpleState />  */}

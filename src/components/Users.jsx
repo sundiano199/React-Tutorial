@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { FadeLoader } from "react-spinners";
 
 const url = "https://jsonplaceholder.typicode.com/users";
 
@@ -25,7 +26,9 @@ const Users = () => {
   }, [])
   if (isLoading) {
     return(
-        <h1 className="text-3xl animate-pulse text-center">Loading Profiles... </h1>
+       <div className="h-[500px] flex justify-center items-center">
+        <FadeLoader color="red" speedMultiplier= "-20" />
+       </div>
     )
   }
   

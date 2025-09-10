@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
+import { FadeLoader } from 'react-spinners';
 const url = "https://dummyjson.com/products?limit=30";
 const ComplexEffect = () => {
   const [products, setProducts] = useState([]); // its empty because we haven't specify which data we want to work with or map
@@ -23,7 +23,9 @@ const ComplexEffect = () => {
   }, []); // empty [] means once
   if (isLoading) {
     return(
-        <h1 className="text-3xl animate-pulse text-center">Loading Products... </h1>
+        <div>
+            <FadeLoader />
+        </div>
     )
   }
   return (
