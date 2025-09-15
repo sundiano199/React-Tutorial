@@ -16,6 +16,7 @@ import SimpleForm from "./components/SimpleForm";
 import ComplexForm from "./components/ComplexForm";
 import OtherInputs from "./components/OtherInputs";
 import ThirdPartyForm from "./components/ThirdPartyForm"
+import Register from "./components/Register";
 
 
 function App () {
@@ -35,7 +36,9 @@ function App () {
     {/* <SimpleForm /> */}
     {/* <ComplexForm /> */}
     {/* <OtherInputs /> */}
-    <ThirdPartyForm />
+    {/* <ThirdPartyForm /> */}
+    <Register />
+
 
     </div>
 }
