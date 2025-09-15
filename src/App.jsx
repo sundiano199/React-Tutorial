@@ -13,7 +13,9 @@ import BackToTop from "./components/BackToTop";
 import Authors from "./components/Authors";
 import Books from "./components/Books";
 import SimpleForm from "./components/SimpleForm";
-
+import ComplexForm from "./components/ComplexForm";
+import OtherInputs from "./components/OtherInputs";
+import ThirdPartyForm from "./components/ThirdPartyForm"
 
 
 function App () {
@@ -30,7 +32,10 @@ function App () {
     <BackToTop /> */}
     {/* <Authors />
     <Books /> */}
-    <SimpleForm />
+    {/* <SimpleForm /> */}
+    {/* <ComplexForm /> */}
+    {/* <OtherInputs /> */}
+    <ThirdPartyForm />
 
     </div>
 }
