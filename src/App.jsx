@@ -1,46 +1,35 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Categories from "./components/Categories";
-import Topsellers from "./components/Topsellers";
-import NiveaStore from "./components/NiveaStore";
-import EventHandling from "./components/EventHandling";
-import Conditional from "./components/Conditional";
-import SimpleState from "./components/SimpleState";
-import SimpleEffect from "./components/SimpleEffect";
-import ComplexEffect from "./components/ComplexEffect";
-import Users from "./components/Users";
-import BackToTop from "./components/BackToTop";
-import Authors from "./components/Authors";
-import Books from "./components/Books";
-import SimpleForm from "./components/SimpleForm";
-import ComplexForm from "./components/ComplexForm";
-import OtherInputs from "./components/OtherInputs";
-import ThirdPartyForm from "./components/ThirdPartyForm"
-import Register from "./components/Register";
+import React from "react";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Error404 from "../pages/Error404";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
+import Nav from "./components/Nav";
+import Login from "../pages/Login";
+import Profile from "../pages/Profile";
+import ProductDetails from "../pages/ProductDetails";
 
-
-function App () {
-  return <div>
-    <h1>REACT TUTORIALS</h1>
-
-    {/* <Navbar /> */}
-    {/* <EventHandling />
-    <Conditional />
-    <SimpleState />  */}
-    {/* <SimpleEffect />
-    <ComplexEffect /> */}
-    {/* <Users />
-    <BackToTop /> */}
-    {/* <Authors />
-    <Books /> */}
-    {/* <SimpleForm /> */}
-    {/* <ComplexForm /> */}
-    {/* <OtherInputs /> */}
-    {/* <ThirdPartyForm /> */}
-    <Register />
-
-
-    </div>
+function App() {
+  return (
+    <>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/about-us" element={<Navigate to="/about" />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/signin" element={<Login />} />
+          <Route path="/products/:productId" element= {<ProductDetails />} /> 
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </Router>
+    </>
+  ); // or normal divs
 }
 
 export default App;
