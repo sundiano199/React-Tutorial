@@ -30,14 +30,51 @@ const ProductDetails = () => {
             <p>{results.warrantyInformation}</p>
             <p>{results.ShippingInformation}</p>
           </div>
-          <p>Ratings: {results.rating} </p>
         </div>
       </div>
-      <div>
+      {/* <div>
         <p>
-            Rating:{""}
-            <span className={results.rating > 3.5 ? "text-green-500" : "text-red-500"}></span>
+          Rating:{" "}
+          <span
+            className={results.rating > 3.5 ? "text-green-500" : "text-red-500"}
+          >
+            {results.rating}
+          </span>
         </p>
+      </div> */}
+      <div className="grid md:grid-cols-2 gap-3 items-center my-3 w-full">
+        <div></div>
+        <div className="bg-gray-100 rounded-md px-3">
+          <h1 className="text-3xl font-semibold">Customer's Feedback</h1>
+          {/* customer 1 */}
+          <p className="font-semibold">{results.reviews[0].reviewerName}</p>
+          <p>Ratings: {results.reviews[0].rating}</p>
+          <p>Comment: {results.reviews[0].comment}</p>
+          {/* customer 2 */}
+          <br />
+          <p className="font-semibold">{results.reviews[1].reviewerName}</p>
+          <p>Ratings: {results.reviews[1].rating}</p>
+          <p>Comment: {results.reviews[1].comment}</p>
+          <br />
+          {/* custmer 3 */}
+          <p className="font-semibold">{results.reviews[2].reviewerName}</p>
+          <p>Ratings: {results.reviews[2].rating}</p>
+          <p>Comment: {results.reviews[2].comment}</p>
+        </div>
+      </div>
+
+      {/* using map method */}
+      <div className="grid md:grid-cols-2 gap-3 items-center my-3 w-full">
+        <div></div>
+        <div>
+          {results.reviews.map((review, index) => (
+            <p key={index}>
+              <span className="font-semibold">{review.reviewerName}</span>:{" "}
+              {review.comment} <br />
+              Ratings: {review.rating}
+            </p>
+          ))}
+        </div>
       </div>
     </div>
   );
