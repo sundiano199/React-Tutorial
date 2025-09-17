@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { useFetch } from "../src/hooks/useFetch";
-import Loader from "../src/components/Loader";
+import { useFetch } from "../hooks/useFetch";
+import Loader from "../components/Loader";
 
 // useParams - used to get access to dynamic route
 
@@ -67,8 +67,8 @@ const ProductDetails = () => {
       <div className="grid md:grid-cols-2 gap-3 items-center my-3 w-full">
         <div></div>
         <div>
-          {results.reviews.map((review, index) => (
-            <p key={index}>
+          {results.reviews.map((review, id) => (
+            <p key={id}>
               <span className="font-semibold">{review.reviewerName}</span>:{" "}
               {review.comment} <br />
               Ratings: {review.rating}

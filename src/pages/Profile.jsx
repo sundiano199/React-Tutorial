@@ -1,6 +1,6 @@
 import React from "react";
-import { useFetch } from "../src/hooks/useFetch";
-import Loader from "../src/components/Loader";
+import { useFetch } from "../hooks/useFetch";
+import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 
 const url = "https://dummyjson.com/products";
@@ -23,7 +23,6 @@ const Profile = () => {
                 <img src={product.thumbnail} alt="" />
                 <p className="font-semibold">{product.title}</p>
                 <p className="text-xl">{product.price}</p>
-                
               </div>
             </Link>
           );
