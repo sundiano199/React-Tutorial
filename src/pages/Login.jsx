@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../hooks/useAppContext";
 
 const loginSchema = yup.object().shape({
   email: yup
@@ -21,6 +22,7 @@ const Login = () => {
 
   const redirect = useNavigate(); // for navigation
   const [error, setError] = useState("");
+  const {setUser} = useAppContext();
 
   const handleLogin = (data) => {
     const { email, password } = data; // we're destructuring here
@@ -28,6 +30,7 @@ const Login = () => {
       setError("Invalid Credentials");
     } else {
       // after a server action
+      setUser(email)
       redirect("/profile");
     }
   };

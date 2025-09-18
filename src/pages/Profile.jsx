@@ -2,17 +2,19 @@ import React from "react";
 import { useFetch } from "../hooks/useFetch";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
+import { useAppContext } from "../hooks/useAppContext";
 
 const url = "https://dummyjson.com/products";
 const Profile = () => {
   const { isLoading, isError, results } = useFetch(url);
+  const {user} = useAppContext()
   if (isLoading) {
     return <Loader />;
   }
 
   return (
     <div className="p-4">
-      <h1 className="text-3xl">Welcome Back User!</h1>
+      <h1 className="text-3xl">Welcome Back {user ? user : "Anonymous"}</h1>
 
       <h1 className="text-center text-2xl font-bold">List of products</h1>
       <div className="grid md:grid-cols-3 gap-5">
